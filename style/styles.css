@@ -303,9 +303,24 @@ nav ul li a:hover{
 .img-container-scriptwriting {
     width: 65%;
     display: flex;
-    justify-content: center;  /* Centers the image horizontally */
     align-items: center;      /* Centers the image vertically */
     height: 100vh;     
+}
+
+.img1 {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    height: auto;
+}
+
+.img2 {
+    position: absolute;
+    top: 50px; /* Sesuaikan dengan kebutuhan untuk mengatur tumpukan */
+    left: 540px; /* Sesuaikan dengan kebutuhan untuk mengatur tumpukan */
+    z-index: 2;
+    width: 50%; /* Sesuaikan ukuran sesuai kebutuhan */
+    height: auto;
 }
 
 .title-works-scriptwriting ul li{
@@ -323,12 +338,7 @@ nav ul li a:hover{
     letter-spacing: 0.002em;
 }
 
-.img-container-scriptwriting img{
-    width: 65%;
-    height: auto;
-    object-fit: cover;
-    max-height: 100vh; /* Prevents image from exceeding viewport height */
-}
+
 
 
 /* Manga*/
@@ -347,6 +357,10 @@ nav ul li a:hover{
     overflow: visible;
     padding: 0;
     position: relative;
+}
+
+.img-pad{
+    padding: 100px 0;
 }
 
 .title-works-manga h1{
@@ -392,8 +406,9 @@ nav ul li a:hover{
 .img-container-webcomic img{
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: scale-down;
     max-height: 100vh; /* Prevents image from exceeding viewport height */
+    padding: 100px 0 100px 0;
 }
 
 .contact{
@@ -463,6 +478,57 @@ form{
     width: 100%;
 }
 
+.form-label{
+    font-family: "Bricolage Grotesque", sans-serif;
+    color: #194785;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.radio-botton{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+/* Menyembunyikan radio button default */
+input[type="radio"] {
+    display: none;
+  }
+  
+  /* Styling untuk label agar terlihat seperti kotak */
+  input[type="radio"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* Kotak sebelum label */
+  input[type="radio"] + label::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    border-radius: 1px; /* Membuat kotak */
+    box-sizing: border-box;
+  }
+  
+  /* Efek ketika radio button dipilih */
+  input[type="radio"]:checked + label::before {
+    background-color: #194785;
+    border: none;
+    background-image: url('../img/checked.png');
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
 .form-group{
     padding: 0 0 20px 0;
     width: 100%;
@@ -482,6 +548,44 @@ form{
     background: rgb(232, 237, 243);
     color: rgb(25, 71, 133);
     box-shadow: transparent 0px 0px 0px 1px inset;
+}
+
+.button {
+	pointer-events: auto;
+	cursor: pointer;
+	background: #FD652c;
+	border: none;
+	padding: 1.5rem 3rem;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	position: relative;
+	display: inline-block;
+}
+
+
+.button--pandora {
+	background: #194785;
+	font-weight: 700;
+	padding: 0;
+	border-radius: 1px;
+    border: none;
+    width: 100%;
+}
+
+.button--pandora span {
+	display: block;
+	background: #FD652c;
+	padding: 1rem 2rem;
+	border: 3px solid #194785;
+	border-radius: 1px;
+    color: #fff;
+	transform: translate3d(-4px, -4px, 0);
+	transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.button--pandora:hover span {
+	transform: translate3d(-8px, -8px, 0);
 }
 
 .button-form{
@@ -792,6 +896,24 @@ form{
     font-family: "Bricolage Grotesque", sans-serif;
 }
 
+@media (max-width: 1280px) {
+    .img1 {
+        position: relative;
+        z-index: 1;
+        width: 50%;
+        height: auto;
+    }
+    
+    .img2 {
+        position: absolute;
+        top: 50px; /* Sesuaikan dengan kebutuhan untuk mengatur tumpukan */
+        left: 370px; /* Sesuaikan dengan kebutuhan untuk mengatur tumpukan */
+        z-index: 2;
+        width: 50%; /* Sesuaikan ukuran sesuai kebutuhan */
+        height: auto;
+    }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero {
@@ -923,12 +1045,9 @@ form{
     .img-container-scriptwriting{
         width: 100%;
         height: auto;
+        padding-bottom: 50px;
     }
     
-    .img-container-scriptwriting img{
-        width: 100%;
-        height: auto;
-    }
     /*manga*/
     .title-works-manga{
         width: 100%;
@@ -968,6 +1087,7 @@ form{
         height: auto;
         object-fit: cover;
         max-height: 100vh; /* Prevents image from exceeding viewport height */
+        padding: 0;
     }
 
     .contact{
@@ -1020,4 +1140,21 @@ form{
         gap: 4px;
         order: 2;
     }
+
+    .img1 {
+        position: relative;
+        z-index: 1;
+        width: 50%;
+        height: auto;
+    }
+
+    .img2 {
+        position: absolute;
+        top: -50px; /* Sesuaikan dengan kebutuhan untuk mengatur tumpukan */
+        left: 160px; /* Sesuaikan dengan kebutuhan untuk mengatur tumpukan */
+        z-index: 2;
+        width: 50%; /* Sesuaikan ukuran sesuai kebutuhan */
+        height: auto;
+    }
+
 }
