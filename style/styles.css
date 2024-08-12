@@ -592,7 +592,7 @@ input[type="radio"] {
 }
 
 .button--pandora:hover span {
-	transform: translate3d(-8px, -8px, 0);
+	transform: translate3d( 0px, 0px, 0);
 }
 
 .button-form{
@@ -858,6 +858,14 @@ input[type="radio"] {
     margin: 0;
 }
 
+.info-nohp p:hover{
+    color: #FD652c;
+    text-decoration: underline;
+    cursor: pointer;color: #FD652c;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .info-copyright{
     outline: none;
     display: flex;
@@ -903,6 +911,17 @@ input[type="radio"] {
     font-family: "Bricolage Grotesque", sans-serif;
 }
 
+@media (max-width: 1507px) {
+    
+    .img2 {
+        position: absolute;
+        top: 50px; /* Sesuaikan dengan kebutuhan untuk mengatur tumpukan */
+        left: 370px; /* Sesuaikan dengan kebutuhan untuk mengatur tumpukan */
+        z-index: 2;
+        width: 50%; /* Sesuaikan ukuran sesuai kebutuhan */
+        height: auto;
+    }
+}
 @media (max-width: 1280px) {
     .img1 {
         position: relative;
